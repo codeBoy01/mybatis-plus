@@ -31,7 +31,20 @@ class Mpdemo1010ApplicationTests {
 
 	@Test
 	public void updateUser(){
+		User user=new User();
+		user.setId(2L);
+		user.setAge(20);
+		int row=userMapper.updateById(user);
+	}
 
+	@Test
+	public void autoInsertUser(){
+		User user=new User();
+		user.setAge(80);
+		user.setName("Lucky22");
+		user.setEmail("Lucky22@qq.com");
+		int insert=userMapper.insert(user);
+		System.out.println("insert："+insert);
 	}
 
 }
