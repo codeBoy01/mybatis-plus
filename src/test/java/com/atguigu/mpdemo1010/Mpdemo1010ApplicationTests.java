@@ -35,6 +35,7 @@ class Mpdemo1010ApplicationTests {
 		user.setId(2L);
 		user.setAge(20);
 		int row=userMapper.updateById(user);
+        System.out.println(2222);
 	}
 
 	@Test
