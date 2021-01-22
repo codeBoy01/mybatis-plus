@@ -47,5 +47,20 @@ class Mpdemo1010ApplicationTests {
 		int insert=userMapper.insert(user);
 		System.out.println("insert："+insert);
 	}
+	@Test
+	public void testOptimisticLocker(){
+		User user=userMapper.selectById(1L);
+		user.setName("yye");
+		user.setEmail("yye@qq.com");
+		userMapper.updateById(user);
+	}
+	@Test
+	public void test2OptimisticLocker(){
+		User user=userMapper.selectById(1L);
+		user.setName("yye");
+		user.setEmail("yye@qq.com");
+		user.setVersion(user.getVersion()-1);
+		userMapper.updateById(user);
+	}
 
 }
