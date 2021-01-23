@@ -137,6 +137,13 @@ class Mpdemo1010ApplicationTests {
 		int result=userMapper.deleteById(4L);
 		System.out.println("result:"+result);
 	}
-
+	@Test
+	public void testPerformance() {
+		User user = new User();
+		user.setName("我是Helen");
+		user.setEmail("helen@sina.com");
+		user.setAge(18);
+		userMapper.insert(user);
+	}
 
 }
